@@ -19,6 +19,7 @@ import {
 } from "@/lib/site/content";
 import { SiteFooter } from "@/components/site/footer";
 import { SiteHeader } from "@/components/site/header";
+import { TrackedLink } from "@/components/site/tracked-link";
 
 export const metadata: Metadata = {
   title: "AI Prompts for Security Managers | 100SecurityPrompts.com",
@@ -120,13 +121,21 @@ export default function HomePage() {
             <h1>{product.headline}</h1>
             <p className="hero-subheadline">{product.subheadline}</p>
             <div className="hero-actions">
-              <a className="button button-primary" href={product.stripePaymentLink}>
+              <TrackedLink
+                className="button button-primary"
+                eventName="Purchase CTA Click"
+                href={product.stripePaymentLink}
+              >
                 Get Instant Access - {product.price}
                 <ArrowRight size={18} aria-hidden="true" />
-              </a>
-              <a className="button button-secondary" href="#samples">
+              </TrackedLink>
+              <TrackedLink
+                className="button button-secondary"
+                eventName="View Sample Prompts"
+                href="#samples"
+              >
                 View Sample Prompts
-              </a>
+              </TrackedLink>
             </div>
             <div className="trust-strip" aria-label="Purchase details">
               <span>
@@ -268,10 +277,14 @@ export default function HomePage() {
             </div>
             <div className="price-stack">
               <strong>{product.price}</strong>
-              <a className="button button-primary" href={product.stripePaymentLink}>
+              <TrackedLink
+                className="button button-primary"
+                eventName="Purchase CTA Click"
+                href={product.stripePaymentLink}
+              >
                 Get Instant Access - {product.price}
                 <ArrowRight size={18} aria-hidden="true" />
-              </a>
+              </TrackedLink>
               <span>Secure payment via Stripe Checkout</span>
             </div>
           </div>
@@ -298,10 +311,14 @@ export default function HomePage() {
             Get the launch PDF and use the prompts for reports, handovers,
             risk assessments, team communication and client updates.
           </p>
-          <a className="button button-primary" href={product.stripePaymentLink}>
+          <TrackedLink
+            className="button button-primary"
+            eventName="Purchase CTA Click"
+            href={product.stripePaymentLink}
+          >
             Get Instant Access - {product.price}
             <ArrowRight size={18} aria-hidden="true" />
-          </a>
+          </TrackedLink>
         </section>
       </main>
       <SiteFooter />

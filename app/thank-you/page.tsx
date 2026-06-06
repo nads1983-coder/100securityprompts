@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Download, Mail } from "lucide-react";
 import { SiteFooter } from "@/components/site/footer";
 import { SiteHeader } from "@/components/site/header";
+import { TrackedLink } from "@/components/site/tracked-link";
 import { product } from "@/lib/site/content";
 
 export const metadata: Metadata = {
@@ -19,11 +20,13 @@ export default function ThankYouPage() {
       title: "100 AI Prompts for Security Managers",
       detail: "Main product PDF",
       href: "/downloads/100-ai-prompts-for-security-managers.pdf",
+      eventName: "Download Main PDF",
     },
     {
       title: "25 Real-World Security Manager AI Use Cases",
       detail: "Bonus PDF",
       href: "/downloads/25-real-world-security-manager-ai-use-cases-bonus.pdf",
+      eventName: "Download Bonus PDF",
     },
   ];
 
@@ -44,10 +47,15 @@ export default function ThankYouPage() {
                   <h2>{item.title}</h2>
                   <p>{item.detail}</p>
                 </div>
-                <a className="button button-primary" href={item.href} download>
+                <TrackedLink
+                  className="button button-primary"
+                  eventName={item.eventName}
+                  href={item.href}
+                  download
+                >
                   <Download size={18} aria-hidden="true" />
                   Download PDF
-                </a>
+                </TrackedLink>
               </div>
             ))}
           </div>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ShieldCheck } from "lucide-react";
 import { navItems, product } from "@/lib/site/content";
+import { TrackedLink } from "@/components/site/tracked-link";
 
 export function SiteHeader() {
   return (
@@ -18,9 +19,13 @@ export function SiteHeader() {
           </Link>
         ))}
       </nav>
-      <a className="nav-cta" href={product.stripePaymentLink}>
+      <TrackedLink
+        className="nav-cta"
+        eventName="Purchase CTA Click"
+        href={product.stripePaymentLink}
+      >
         Get Access
-      </a>
+      </TrackedLink>
     </header>
   );
 }
