@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/terms-and-conditions",
     "/refund-policy",
     "/blog",
+    "/insights",
   ];
 
   return [
@@ -21,6 +22,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     ...blogPosts.map((post) => ({
       url: `${siteUrl}/blog/${post.slug}`,
+      lastModified: new Date(post.published),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
+    ...blogPosts.map((post) => ({
+      url: `${siteUrl}/insights/${post.slug}`,
       lastModified: new Date(post.published),
       changeFrequency: "monthly" as const,
       priority: 0.8,

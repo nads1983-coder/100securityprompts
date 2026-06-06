@@ -18,7 +18,7 @@ export const navItems = [
   ["What's Included", "/#included"],
   ["Samples", "/#samples"],
   ["About", "/about"],
-  ["Blog", "/blog"],
+  ["Insights", "/insights"],
   ["Contact", "/contact"],
 ] as const;
 
