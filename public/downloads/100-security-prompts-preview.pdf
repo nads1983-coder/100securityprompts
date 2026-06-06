@@ -1,0 +1,49 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 502 >>
+stream
+BT
+/F1 18 Tf
+72 720 Td
+(100 AI Prompts for Security Managers) Tj
+/F1 12 Tf
+0 -36 Td
+(Launch PDF delivery file for 100SecurityPrompts.com.) Tj
+0 -24 Td
+(Replace this starter file with the final customer PDF before launch.) Tj
+0 -36 Td
+(Includes: 100 security-focused ChatGPT prompts and 25 real-world use cases.) Tj
+0 -24 Td
+(Topics: incident reports, investigations, risk assessments, shift handovers,) Tj
+0 -18 Td
+(leadership communication, client updates and security operations.) Tj
+0 -36 Td
+(Support: support@100securityprompts.com) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000000794 00000 n 
+trailer
+<< /Root 1 0 R /Size 6 >>
+startxref
+864
+%%EOF

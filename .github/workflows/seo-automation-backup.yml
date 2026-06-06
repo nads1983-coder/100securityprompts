@@ -1,0 +1,31 @@
+name: SEO Automation Backup Runner
+
+on:
+  schedule:
+    - cron: "30 7 * * *"
+    - cron: "30 9 * * 0"
+  workflow_dispatch:
+    inputs:
+      run_type:
+        description: daily-run or weekly-report
+        required: true
+        default: daily-run
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger automation endpoint
+        env:
+          SEO_AUTOMATION_BASE_URL: ${{ secrets.SEO_AUTOMATION_BASE_URL }}
+          SEO_AUTOMATION_SECRET: ${{ secrets.SEO_AUTOMATION_SECRET }}
+          INPUT_RUN_TYPE: ${{ github.event.inputs.run_type }}
+        run: |
+          set -euo pipefail
+          RUN_TYPE="${INPUT_RUN_TYPE:-daily-run}"
+          if [ "${{ github.event.schedule }}" = "30 9 * * 0" ]; then
+            RUN_TYPE="weekly-report"
+          fi
+          curl --fail --show-error --request POST \
+            --header "Authorization: Bearer ${SEO_AUTOMATION_SECRET}" \
+            "${SEO_AUTOMATION_BASE_URL}/api/agents/${RUN_TYPE}"
