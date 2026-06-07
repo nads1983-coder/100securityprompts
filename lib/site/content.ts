@@ -1,3 +1,6 @@
+import { existsSync, readdirSync, readFileSync } from "node:fs";
+import path from "node:path";
+
 export const siteUrl = "https://100securityprompts.com";
 
 export const product = {
@@ -97,7 +100,46 @@ export const samplePrompts = [
   },
 ];
 
-export const blogPosts = [
+type BlogPost = {
+  slug: string;
+  title: string;
+  seoTitle?: string;
+  description: string;
+  published: string;
+  readingTime?: string;
+  articleType?: string;
+  targetKeyword?: string;
+  tags?: string[];
+  cta?: string;
+  body?: string;
+  sections: readonly (readonly [string, string])[];
+};
+
+type GeneratedBlogPost = {
+  slug?: string;
+  title?: string;
+  seoTitle?: string;
+  metaTitle?: string;
+  metaDescription?: string;
+  excerpt?: string;
+  description?: string;
+  date?: string;
+  publishedDate?: string;
+  readingTime?: string;
+  readingTimeMinutes?: number;
+  articleType?: string;
+  targetKeyword?: string;
+  tags?: string[];
+  keywordVariations?: string[];
+  cta?: string;
+  content?: string;
+  body?: string;
+  articleMarkdown?: string;
+};
+
+const contentDirectory = path.join(process.cwd(), "content", "blog");
+
+const manualBlogPosts = [
   {
     slug: "ai-prompts-for-security-managers",
     title: "AI Prompts for Security Managers",
@@ -203,4 +245,63 @@ export const blogPosts = [
       ],
     ],
   },
-] as const;
+] as const satisfies readonly BlogPost[];
+
+function estimateReadingTime(content: string) {
+  const words = content.trim().split(/\s+/).filter(Boolean).length;
+  return `${Math.max(1, Math.ceil(words / 220))} min read`;
+}
+
+function toGeneratedBlogPost(raw: GeneratedBlogPost): BlogPost | null {
+  if (!raw.slug || !raw.title) return null;
+
+  const body = raw.articleMarkdown || raw.content || raw.body || "";
+  if (!body.trim()) return null;
+
+  const tags = Array.isArray(raw.tags)
+    ? raw.tags
+    : Array.isArray(raw.keywordVariations)
+      ? raw.keywordVariations
+      : [];
+
+  return {
+    slug: raw.slug,
+    title: raw.title,
+    seoTitle: raw.seoTitle || raw.metaTitle || raw.title,
+    description: raw.metaDescription || raw.excerpt || raw.description || raw.title,
+    published: raw.publishedDate || raw.date || new Date().toISOString(),
+    readingTime:
+      raw.readingTime ||
+      (raw.readingTimeMinutes ? `${raw.readingTimeMinutes} min read` : estimateReadingTime(body)),
+    articleType: raw.articleType || "Security Management",
+    targetKeyword: raw.targetKeyword || tags[0] || "",
+    tags,
+    cta: raw.cta,
+    body,
+    sections: [],
+  };
+}
+
+function getGeneratedBlogPosts() {
+  if (!existsSync(contentDirectory)) return [];
+
+  return readdirSync(contentDirectory)
+    .filter((file) => file.endsWith(".json"))
+    .flatMap((file) => {
+      try {
+        const raw = readFileSync(path.join(contentDirectory, file), "utf8");
+        const post = toGeneratedBlogPost(JSON.parse(raw) as GeneratedBlogPost);
+        return post ? [post] : [];
+      } catch {
+        return [];
+      }
+    });
+}
+
+const generatedBlogPosts = getGeneratedBlogPosts();
+const generatedSlugs = new Set(generatedBlogPosts.map((post) => post.slug));
+
+export const blogPosts: BlogPost[] = [
+  ...generatedBlogPosts,
+  ...manualBlogPosts.filter((post) => !generatedSlugs.has(post.slug)),
+].sort((a, b) => new Date(b.published).getTime() - new Date(a.published).getTime());

@@ -571,6 +571,48 @@ details p {
   font-weight: 800;
 }
 
+.article-meta,
+.article-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1rem;
+}
+
+.article-meta span,
+.article-tags span {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.42rem 0.7rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.article-tags span {
+  color: var(--gold-bright);
+}
+
+.article-cta {
+  border: 1px solid rgba(234, 179, 8, 0.32);
+  border-radius: 8px;
+  padding: 1.35rem;
+  background: rgba(234, 179, 8, 0.08);
+}
+
+.article-cta p:first-child {
+  margin: 0;
+  color: var(--gold-bright);
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.article-cta a {
+  color: var(--gold-bright);
+  font-weight: 900;
+}
+
 .blog-card h2 {
   margin-top: 0.7rem;
   font-size: clamp(1.45rem, 3vw, 2.1rem);

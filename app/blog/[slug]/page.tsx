@@ -28,19 +28,87 @@ export async function generateMetadata({
   }
 
   return {
-    title: post.title,
+    title: post.seoTitle || post.title,
     description: post.description,
     alternates: {
       canonical: `/blog/${post.slug}`,
     },
     openGraph: {
-      title: post.title,
+      title: post.seoTitle || post.title,
       description: post.description,
       url: `${siteUrl}/blog/${post.slug}`,
       type: "article",
       publishedTime: post.published,
     },
   };
+}
+
+function formatDate(date: string) {
+  return new Intl.DateTimeFormat("en-GB", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  }).format(new Date(date));
+}
+
+function renderInline(text: string) {
+  return text.split(/(\*\*[^*]+\*\*)/g).map((part, index) => {
+    if (part.startsWith("**") && part.endsWith("**")) {
+      return <strong key={index}>{part.slice(2, -2)}</strong>;
+    }
+
+    return <span key={index}>{part}</span>;
+  });
+}
+
+function ArticleBody({ markdown }: { markdown: string }) {
+  const blocks: React.ReactNode[] = [];
+  let listItems: string[] = [];
+
+  const flushList = () => {
+    if (!listItems.length) return;
+
+    blocks.push(
+      <ul key={`list-${blocks.length}`}>
+        {listItems.map((item) => (
+          <li key={item}>{renderInline(item)}</li>
+        ))}
+      </ul>,
+    );
+    listItems = [];
+  };
+
+  markdown.split(/\r?\n/).forEach((rawLine) => {
+    const line = rawLine.trim();
+
+    if (!line) {
+      flushList();
+      return;
+    }
+
+    if (line.startsWith("- ")) {
+      listItems.push(line.slice(2));
+      return;
+    }
+
+    flushList();
+
+    if (line.startsWith("### ")) {
+      blocks.push(<h3 key={`h3-${blocks.length}`}>{renderInline(line.slice(4))}</h3>);
+      return;
+    }
+
+    if (line.startsWith("## ")) {
+      blocks.push(<h2 key={`h2-${blocks.length}`}>{renderInline(line.slice(3))}</h2>);
+      return;
+    }
+
+    blocks.push(<p key={`p-${blocks.length}`}>{renderInline(line)}</p>);
+  });
+
+  flushList();
+
+  return <>{blocks}</>;
 }
 
 export default async function BlogPostPage({ params }: BlogPageProps) {
@@ -91,13 +159,38 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
           </Link>
           <h1>{post.title}</h1>
           <p className="article-description">{post.description}</p>
-          <time dateTime={post.published}>Published 6 June 2026</time>
-          {post.sections.map(([heading, body]) => (
-            <section key={heading}>
-              <h2>{heading}</h2>
-              <p>{body}</p>
+          <div className="article-meta">
+            <time dateTime={post.published}>Published {formatDate(post.published)}</time>
+            {post.readingTime ? <span>{post.readingTime}</span> : null}
+            {post.targetKeyword ? <span>{post.targetKeyword}</span> : null}
+          </div>
+          {post.tags?.length ? (
+            <div className="article-tags">
+              {post.tags.map((tag) => (
+                <span key={tag}>{tag}</span>
+              ))}
+            </div>
+          ) : null}
+          {post.body ? (
+            <ArticleBody markdown={post.body} />
+          ) : (
+            post.sections.map(([heading, body]) => (
+              <section key={heading}>
+                <h2>{heading}</h2>
+                <p>{body}</p>
+              </section>
+            ))
+          )}
+          {post.cta ? (
+            <section className="article-cta">
+              <p>Next step</p>
+              <h2>{post.cta}</h2>
+              <p>
+                Use this guidance to improve one real report, SOP, risk review or handover process this week.
+              </p>
+              <Link href="/#buy">Get the prompt pack</Link>
             </section>
-          ))}
+          ) : null}
         </article>
       </main>
       <SiteFooter />

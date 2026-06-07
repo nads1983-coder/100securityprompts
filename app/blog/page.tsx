@@ -16,6 +16,13 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPage() {
+  const formatDate = (date: string) =>
+    new Intl.DateTimeFormat("en-GB", {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    }).format(new Date(date));
+
   return (
     <>
       <BreadcrumbJsonLd
@@ -36,7 +43,7 @@ export default function BlogPage() {
         <section className="blog-list">
           {blogPosts.map((post) => (
             <article className="blog-card" key={post.slug}>
-              <time dateTime={post.published}>6 June 2026</time>
+              <time dateTime={post.published}>{formatDate(post.published)}</time>
               <h2>{post.title}</h2>
               <p>{post.description}</p>
               <Link href={`/blog/${post.slug}`}>
