@@ -10,6 +10,9 @@ declare global {
       init?: (options?: Record<string, unknown>) => void;
       o?: Record<string, unknown>;
     };
+    nadineAnalytics?: {
+      track: (eventName: string, properties?: Record<string, string | number | boolean>) => void;
+    };
   }
 }
 
@@ -29,6 +32,18 @@ export function TrackedLink({
       {...props}
       onClick={(event) => {
         window.plausible?.(eventName);
+        if (/purchase|access|checkout/i.test(eventName)) {
+          window.nadineAnalytics?.track("checkout_started", {
+            productId: "100-security-prompts",
+            ctaId: "get_access",
+            value: 19,
+            currency: "GBP"
+          });
+        } else {
+          window.nadineAnalytics?.track("cta_clicked", {
+            ctaId: eventName.toLowerCase().replace(/[^a-z0-9]+/g, "_").slice(0, 80)
+          });
+        }
         onClick?.(event);
       }}
     >

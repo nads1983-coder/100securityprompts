@@ -43,10 +43,14 @@ export default function PrivacyPolicyPage() {
           </p>
           <h2>Cookies and analytics</h2>
           <p>
-            This website may use essential cookies and basic analytics to
-            understand site performance and improve the product. If analytics
-            are added, they should be configured with appropriate privacy
-            controls.
+            This website may use essential cookies and privacy-focused
+            analytics, including Plausible Analytics and Nadine Analytics, to
+            understand site performance, campaign attribution, checkout starts,
+            downloads and important product actions.
+          </p>
+          <p>
+            Analytics events do not send names, email addresses, telephone
+            numbers, form contents, full IP addresses or payment card details.
           </p>
           <h2>UK/GDPR considerations</h2>
           <p>

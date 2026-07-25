@@ -4,6 +4,10 @@ import Script from "next/script";
 import { product, siteUrl } from "@/lib/site/content";
 import "./globals.css";
 
+const nadineAnalyticsSiteId = process.env.NEXT_PUBLIC_NADINE_ANALYTICS_SITE_ID;
+const nadineAnalyticsTrackingKey = process.env.NEXT_PUBLIC_NADINE_ANALYTICS_TRACKING_KEY;
+const nadineAnalyticsEndpoint = process.env.NEXT_PUBLIC_NADINE_ANALYTICS_ENDPOINT ?? "https://nadine-analytics.vercel.app";
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
@@ -28,6 +32,16 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
     <html lang="en">
       <body>
         {children}
+        {nadineAnalyticsSiteId && nadineAnalyticsTrackingKey ? (
+          <Script
+            id="nadine-analytics"
+            src={`${nadineAnalyticsEndpoint}/tracker.js`}
+            data-site-id={nadineAnalyticsSiteId}
+            data-tracking-key={nadineAnalyticsTrackingKey}
+            data-endpoint={`${nadineAnalyticsEndpoint}/api/events`}
+            strategy="afterInteractive"
+          />
+        ) : null}
         <Script
           src="https://plausible.io/js/pa-vqiuir9-us1k7wXEQEuzz.js"
           strategy="afterInteractive"
