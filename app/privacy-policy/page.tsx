@@ -44,7 +44,7 @@ export default function PrivacyPolicyPage() {
           <h2>Cookies and analytics</h2>
           <p>
             This website may use essential cookies and privacy-focused
-            analytics, including Plausible Analytics and Nadine Analytics, to
+            analytics through Nadine Analytics to
             understand site performance, campaign attribution, checkout starts,
             downloads and important product actions.
           </p>
