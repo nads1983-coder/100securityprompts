@@ -106,6 +106,7 @@ type BlogPost = {
   seoTitle?: string;
   description: string;
   published: string;
+  updated?: string;
   readingTime?: string;
   articleType?: string;
   targetKeyword?: string;
@@ -125,6 +126,7 @@ type GeneratedBlogPost = {
   description?: string;
   date?: string;
   publishedDate?: string;
+  updatedAt?: string;
   readingTime?: string;
   readingTimeMinutes?: number;
   articleType?: string;
@@ -270,6 +272,7 @@ function toGeneratedBlogPost(raw: GeneratedBlogPost): BlogPost | null {
     seoTitle: raw.seoTitle || raw.metaTitle || raw.title,
     description: raw.metaDescription || raw.excerpt || raw.description || raw.title,
     published: raw.publishedDate || raw.date || new Date().toISOString(),
+    updated: raw.updatedAt || raw.publishedDate || raw.date || new Date().toISOString(),
     readingTime:
       raw.readingTime ||
       (raw.readingTimeMinutes ? `${raw.readingTimeMinutes} min read` : estimateReadingTime(body)),

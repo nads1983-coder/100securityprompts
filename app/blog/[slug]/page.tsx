@@ -39,6 +39,7 @@ export async function generateMetadata({
       url: `${siteUrl}/blog/${post.slug}`,
       type: "article",
       publishedTime: post.published,
+      modifiedTime: post.updated || post.published,
     },
   };
 }
@@ -146,7 +147,7 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
     headline: post.title,
     description: post.description,
     datePublished: post.published,
-    dateModified: post.published,
+    dateModified: post.updated || post.published,
     author: {
       "@type": "Person",
       name: "Nadine Pierre",

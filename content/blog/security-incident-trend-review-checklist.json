@@ -26,8 +26,8 @@
   ],
   "body": "Security Incident Trend Review Checklist gives 100 Security Prompts readers a practical way to handle security incident trend review without drifting outside the brand boundary.\n\n## Why security incident trend review matters\n\nSearchers need a clear answer, useful context and a next step they can trust. This article is structured for on-page SEO, answer extraction and human readability.\n\n## What to check first\n\nReview the current content cluster, then connect this article to /blog/how-to-write-a-clear-security-incident-report-that-managers-can-act-on and /blog/how-to-write-better-security-handover-notes so readers and crawlers can move through related material.\n\n## How to apply the improvement safely\n\nUse a canonical URL, an indexable route, Article structured data and source-backed claims. Reference https://www.hse.gov.uk/humanfactors/topics/communications.htm where it supports the guidance.\n\n## Useful next steps\n\nValidate the page build, check the live canonical, confirm sitemap inclusion and update the publishing ledger only after production verification succeeds.",
   "status": "published",
-  "publishedDate": "2026-07-26T00:00:00.000Z",
-  "updatedAt": "2026-07-26T00:00:00.000Z",
+  "publishedDate": "2026-08-02T00:00:00.000Z",
+  "updatedAt": "2026-08-02T00:00:00.000Z",
   "verification": {
     "route": "/blog/security-incident-trend-review-checklist",
     "h1": "Security Incident Trend Review Checklist",
