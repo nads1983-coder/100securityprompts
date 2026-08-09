@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import { BreadcrumbJsonLd } from "@/components/site/breadcrumb-json-ld";
 import { SiteFooter } from "@/components/site/footer";
@@ -51,6 +52,13 @@ export default function AboutPage() {
             prompts for incident reports, investigations, shift handovers, risk
             assessments, leadership communication, client updates and emergency
             response planning.
+          </p>
+          <p>
+            For optional equipment and study-resource ideas, see the {" "}
+            <Link href="/recommended-security-essentials">
+              recommended security essentials
+            </Link>{" "}
+            page.
           </p>
         </section>
       </main>

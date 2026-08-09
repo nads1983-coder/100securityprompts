@@ -52,6 +52,17 @@ export default function BlogPage() {
             </article>
           ))}
         </section>
+        <section className="article-cta essentials-inline-cta">
+          <p>Useful add-on</p>
+          <h2>Need practical kit for shifts, study or control-room work?</h2>
+          <p>
+            Browse optional Amazon UK search recommendations for notebooks,
+            torches, PPE, study materials and other security essentials.
+          </p>
+          <Link href="/recommended-security-essentials">
+            View recommended security essentials
+          </Link>
+        </section>
       </main>
       <SiteFooter />
     </>

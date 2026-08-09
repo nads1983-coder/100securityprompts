@@ -613,6 +613,102 @@ details p {
   font-weight: 900;
 }
 
+.eyebrow {
+  margin: 0 0 0.8rem;
+  color: var(--gold-bright);
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.essentials-actions {
+  margin-top: 1.5rem;
+}
+
+.affiliate-disclosure,
+.essentials-safety,
+.essential-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.affiliate-disclosure {
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+  margin-bottom: 1.2rem;
+  padding: 1rem;
+}
+
+.affiliate-disclosure svg,
+.essentials-safety svg {
+  flex: 0 0 auto;
+  color: var(--gold-bright);
+}
+
+.affiliate-disclosure p {
+  margin: 0;
+  color: #eadfca;
+  font-weight: 800;
+}
+
+.essentials-safety {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.9rem;
+  margin-bottom: 1.4rem;
+  padding: 1.2rem;
+}
+
+.essentials-safety h2,
+.essential-card h2 {
+  margin: 0;
+  font-size: clamp(1.25rem, 3vw, 1.7rem);
+}
+
+.essentials-safety p,
+.essentials-safety li,
+.essential-card p {
+  color: var(--muted);
+}
+
+.essentials-safety ul {
+  margin: 0.8rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.essentials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.essential-card {
+  display: grid;
+  align-content: start;
+  gap: 0.85rem;
+  padding: 1.2rem;
+}
+
+.essential-card p {
+  margin: 0;
+}
+
+.essential-card a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--gold-bright);
+  font-weight: 900;
+}
+
+.essentials-primary-cta,
+.essentials-inline-cta {
+  margin-top: 1.4rem;
+}
+
 .blog-card h2 {
   margin-top: 0.7rem;
   font-size: clamp(1.45rem, 3vw, 2.1rem);
@@ -662,7 +758,8 @@ details p {
   }
 
   .included-grid,
-  .sample-grid {
+  .sample-grid,
+  .essentials-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -693,7 +790,8 @@ details p {
     width: 100%;
   }
 
-  .creator-card {
+  .creator-card,
+  .essentials-safety {
     grid-template-columns: 1fr;
     padding: 1.3rem;
   }

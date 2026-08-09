@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/terms-and-conditions",
     "/refund-policy",
     "/blog",
+    "/recommended-security-essentials",
   ];
 
   return [

@@ -8,6 +8,7 @@ const footerLinks = [
   ["Terms & Conditions", "/terms-and-conditions"],
   ["Refund Policy", "/refund-policy"],
   ["Blog", "/blog"],
+  ["Recommended Essentials", "/recommended-security-essentials"],
 ] as const;
 
 export function SiteFooter() {
