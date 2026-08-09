@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
 };
 
-export function getRecommendedSecurityEssentialsJsonLd() {
+function getRecommendedSecurityEssentialsJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "CollectionPage",

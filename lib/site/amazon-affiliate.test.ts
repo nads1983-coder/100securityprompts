@@ -52,6 +52,7 @@ describe("recommended security essentials affiliate page", () => {
       "Recommended Security Essentials for UK Security Professionals",
     );
     expect(pageSource).toContain("export const metadata");
+    expect(pageSource).toContain("function getRecommendedSecurityEssentialsJsonLd");
     expect(pageSource).toContain("alternates");
     expect(pageSource).toContain("canonical");
     expect(pageSource).toContain("openGraph");
