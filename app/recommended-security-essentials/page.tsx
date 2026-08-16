@@ -85,7 +85,7 @@ export default function RecommendedSecurityEssentialsPage() {
             communication.
           </p>
           <div className="hero-actions essentials-actions">
-            <Link className="button button-primary" href="/#buy">
+            <Link className="button button-primary" href="/#pricing">
               Get the security prompt pack
             </Link>
             <Link className="button button-secondary" href="/blog">
@@ -138,7 +138,7 @@ export default function RecommendedSecurityEssentialsPage() {
             handover and management work that security teams do every day, use
             the 100 AI prompts pack as your main professional resource.
           </p>
-          <Link href="/#buy">Get the prompt pack</Link>
+          <Link href="/#pricing">Get the prompt pack</Link>
         </section>
       </main>
       <SiteFooter />

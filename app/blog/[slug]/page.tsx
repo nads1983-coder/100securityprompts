@@ -210,7 +210,7 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
               <p>
                 Use this guidance to improve one real report, SOP, risk review or handover process this week.
               </p>
-              <Link href="/#buy">Get the prompt pack</Link>
+              <Link href="/#pricing">Get the prompt pack</Link>
             </section>
           ) : null}
         </article>

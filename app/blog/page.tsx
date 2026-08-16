@@ -7,11 +7,18 @@ import { SiteHeader } from "@/components/site/header";
 import { blogPosts } from "@/lib/site/content";
 
 export const metadata: Metadata = {
-  title: "Blog",
+  title: "Security Management AI Blog",
   description:
-    "Practical articles about AI prompts, ChatGPT, incident reports and AI tools for security managers.",
+    "Practical articles about ChatGPT prompts, AI tools, incident reports, handovers, SOPs and operational writing for security managers.",
   alternates: {
     canonical: "/blog",
+  },
+  openGraph: {
+    title: "Security Management AI Blog",
+    description:
+      "Guides for security managers using AI prompts for incident reports, handovers, SOPs and operational communication.",
+    url: "/blog",
+    type: "website",
   },
 };
 

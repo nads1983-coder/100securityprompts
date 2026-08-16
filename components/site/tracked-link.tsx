@@ -29,7 +29,7 @@ export function TrackedLink({
           window.nadineAnalytics?.track("checkout_started", {
             productId: "100-security-prompts",
             ctaId: "get_access",
-            value: 19,
+            value: 9,
             currency: "GBP"
           });
         } else {

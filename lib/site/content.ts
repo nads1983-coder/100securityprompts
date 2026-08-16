@@ -9,12 +9,12 @@ export const product = {
   headline: "100 Practical ChatGPT Prompts for Security Managers & Supervisors",
   subheadline:
     "Save hours every week with proven AI prompts for incident reports, investigations, shift handovers, risk assessments, team management, client communication and security operations.",
-  price: "£19",
-  priceMinor: 1900,
+  price: "£9",
+  priceMinor: 900,
   currency: "gbp",
   bonus: "25 Real-World Security Manager AI Use Cases",
   supportEmail: "support@100securityprompts.com",
-  stripePaymentLink: "https://buy.stripe.com/14AeVdcaw9Xw8bPciSgA809",
+  stripePaymentLink: "https://buy.stripe.com/9B69ATdeA0mWgIldmWgA80c",
 };
 
 export const navItems = [
@@ -63,7 +63,7 @@ export const faqs = [
   {
     question: "Is this a subscription?",
     answer:
-      "No. This is a one-time payment of £19. There are no memberships, dashboards, subscriptions or user accounts.",
+      "No. This is a one-time payment of £9. There are no memberships, dashboards, subscriptions or user accounts.",
   },
   {
     question: "Can my team use it?",

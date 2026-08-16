@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     template: "%s | 100SecurityPrompts.com",
   },
   description:
-    "Practical ChatGPT prompts and AI tools for security managers, supervisors and corporate security teams.",
+    "Download practical ChatGPT prompts and AI tools for security managers, supervisors and corporate security teams.",
   applicationName: product.brand,
   openGraph: {
     siteName: product.brand,

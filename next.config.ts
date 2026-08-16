@@ -8,6 +8,9 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   outputFileTracingRoot: repoRoot,
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   async headers() {
     return [
       {

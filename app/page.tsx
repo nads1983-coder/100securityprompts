@@ -22,25 +22,33 @@ import { SiteHeader } from "@/components/site/header";
 import { TrackedLink } from "@/components/site/tracked-link";
 
 export const metadata: Metadata = {
-  title: "AI Prompts for Security Managers | 100SecurityPrompts.com",
+  title: "100 ChatGPT Prompts for Security Managers - £9 PDF",
   description:
-    "100 practical ChatGPT prompts for security managers and supervisors. Save time on reports, handovers, risk assessments, client updates and security operations.",
+    "Download 100 practical ChatGPT prompts for security managers and supervisors for £9. Improve incident reports, handovers, SOPs, risk assessments and client updates.",
+  keywords: [
+    "security manager prompts",
+    "ChatGPT prompts for security",
+    "AI prompts for security managers",
+    "security incident report prompts",
+    "security handover template",
+    "security SOP prompts",
+  ],
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "AI Prompts for Security Managers",
+    title: "100 ChatGPT Prompts for Security Managers - £9 PDF",
     description:
-      "100 practical ChatGPT prompts for security managers and supervisors, plus 25 real-world AI use cases.",
+      "Practical AI prompts for reports, handovers, risk assessments, SOPs and client updates, plus 25 real-world security manager AI use cases.",
     url: siteUrl,
     type: "website",
     images: ["/images/security-prompts-concept.png"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Prompts for Security Managers",
+    title: "100 ChatGPT Prompts for Security Managers - £9 PDF",
     description:
-      "100 practical ChatGPT prompts for security managers and supervisors.",
+      "Download 100 practical ChatGPT prompts for security managers and supervisors.",
     images: ["/images/security-prompts-concept.png"],
   },
 };
@@ -65,10 +73,10 @@ const schemas = [
     },
     offers: {
       "@type": "Offer",
-      price: "19",
+      price: product.priceMinor / 100,
       priceCurrency: "GBP",
       availability: "https://schema.org/InStock",
-      url: siteUrl,
+      url: product.stripePaymentLink,
     },
   },
   {
@@ -101,6 +109,12 @@ const schemas = [
     jobTitle: "Security management practitioner",
     description:
       "Former Metropolitan Police Officer with 12+ years policing experience, plus security supervisor and security manager experience.",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: product.brand,
+    url: siteUrl,
   },
 ];
 
@@ -143,6 +157,7 @@ export default function HomePage() {
                 Stripe secure checkout
               </span>
               <span>No subscriptions</span>
+              <span>{product.price} one-time payment</span>
               <span>Instant PDF download</span>
             </div>
           </div>
