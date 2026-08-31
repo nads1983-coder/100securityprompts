@@ -615,6 +615,9 @@ details p {
 }
 
 .article-cta a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
   color: var(--gold-bright);
   font-weight: 900;
 }
