@@ -20,6 +20,7 @@ export const product = {
 export const navItems = [
   ["What's Included", "/#included"],
   ["Samples", "/#samples"],
+  ["Prompts", "/prompts"],
   ["About", "/about"],
   ["Blog", "/blog"],
   ["Contact", "/contact"],

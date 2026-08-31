@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { blogPosts, siteUrl } from "@/lib/site/content";
+import { promptCollections } from "@/lib/site/prompt-collections";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date("2026-08-16");
@@ -11,7 +12,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/terms-and-conditions",
     "/refund-policy",
     "/blog",
+    "/prompts",
     "/recommended-security-essentials",
+    "/sitemap.html",
   ];
 
   return [
@@ -26,6 +29,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(post.updated || post.published),
       changeFrequency: "weekly" as const,
       priority: 0.85,
+    })),
+    ...promptCollections.map((collection) => ({
+      url: `${siteUrl}/prompts/${collection.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.82,
     })),
   ];
 }

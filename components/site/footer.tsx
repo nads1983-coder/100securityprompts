@@ -4,11 +4,13 @@ import { product } from "@/lib/site/content";
 const footerLinks = [
   ["About", "/about"],
   ["Contact", "/contact"],
+  ["Prompts", "/prompts"],
   ["Privacy Policy", "/privacy-policy"],
   ["Terms & Conditions", "/terms-and-conditions"],
   ["Refund Policy", "/refund-policy"],
   ["Blog", "/blog"],
   ["Recommended Essentials", "/recommended-security-essentials"],
+  ["Sitemap", "/sitemap.html"],
 ] as const;
 
 export function SiteFooter() {
