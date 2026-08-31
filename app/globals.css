@@ -95,6 +95,12 @@ summary:focus-visible {
   font-size: 0.92rem;
 }
 
+.site-header nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+}
+
 .site-header nav a:hover,
 .footer-links a:hover,
 .legal-content a:hover,
@@ -875,7 +881,8 @@ details p {
   .site-header nav {
     order: 3;
     width: 100%;
-    overflow-x: auto;
+    flex-wrap: wrap;
+    gap: 0.45rem 0.9rem;
     padding-bottom: 0.2rem;
   }
 
