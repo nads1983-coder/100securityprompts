@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { createHmac } from "node:crypto";
-import { eligiblePurchase, stripeSignatureValid } from "./route";
+import { eligiblePurchase, stripeSignatureValid } from "./validation";
 
 const purchase = {
  id:"evt_test",
