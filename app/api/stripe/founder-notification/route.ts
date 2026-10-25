@@ -1,6 +1,5 @@
 import { createHmac, timingSafeEqual } from "node:crypto";
 import { NextResponse } from "next/server";
-import { getSupabaseAdmin } from "@/lib/supabase/server";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -74,6 +73,7 @@ export async function POST(request: Request) {
   if (!paymentLink.startsWith("plink_") || !eligiblePurchase(event, paymentLink))
     return NextResponse.json({ received: true, ignored: true });
 
+  const { getSupabaseAdmin } = await import("@/lib/supabase/server");
   const db = getSupabaseAdmin();
   if (!db || !process.env.RESEND_API_KEY || !process.env.FOUNDER_EMAIL_FROM)
     return NextResponse.json({ error: "notification_configuration_incomplete" }, { status: 503 });
