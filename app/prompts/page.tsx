@@ -54,7 +54,7 @@ export default function PromptsPage() {
         ]}
       />
       <SiteHeader />
-      <main className="content-page prompt-page">
+      <main id="main-content" className="content-page prompt-page">
         <section className="page-hero">
           <p className="eyebrow">Prompt library</p>
           <h1>Security Prompt Collections</h1>

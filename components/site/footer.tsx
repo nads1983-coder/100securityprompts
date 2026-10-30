@@ -17,7 +17,8 @@ export function SiteFooter() {
   return (
     <footer className="site-footer">
       <div>
-        <strong>{product.brand}</strong>
+        <p className="eyebrow">Part of the PIERNEXA portfolio</p>
+        <strong>100 Security Prompts</strong>
         <p>
           Practical AI prompts and security management tools for supervisors,
           managers and operational leaders.

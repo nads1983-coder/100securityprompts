@@ -23,7 +23,7 @@ export default function RefundPolicyPage() {
         ]}
       />
       <SiteHeader />
-      <main className="content-page">
+      <main id="main-content" className="content-page">
         <section className="page-hero">
           <h1>Refund Policy</h1>
           <p>A clear and fair policy for a downloadable digital product.</p>

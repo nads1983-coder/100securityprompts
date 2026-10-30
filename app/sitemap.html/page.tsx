@@ -34,7 +34,7 @@ export default function HtmlSitemapPage() {
         ]}
       />
       <SiteHeader />
-      <main className="content-page">
+      <main id="main-content" className="content-page">
         <section className="page-hero">
           <p className="eyebrow">Sitemap</p>
           <h1>HTML Sitemap</h1>

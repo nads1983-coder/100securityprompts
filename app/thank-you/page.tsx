@@ -33,7 +33,7 @@ export default function ThankYouPage() {
   return (
     <>
       <SiteHeader />
-      <main className="content-page download-page">
+      <main id="main-content" className="content-page download-page">
         <section className="page-hero">
           <h1>Thank you for your purchase.</h1>
           <p>

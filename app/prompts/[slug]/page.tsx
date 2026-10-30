@@ -82,7 +82,7 @@ export default async function PromptCollectionPage({ params }: PromptPageProps) 
         ]}
       />
       <SiteHeader />
-      <main className="content-page prompt-page">
+      <main id="main-content" className="content-page prompt-page">
         <article className="article-page prompt-detail">
           <Link className="back-link" href="/prompts">
             <ArrowLeft size={16} aria-hidden="true" />

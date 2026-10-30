@@ -173,7 +173,7 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
         ]}
       />
       <SiteHeader />
-      <main className="content-page">
+      <main id="main-content" className="content-page">
         <article className="article-page">
           <Link className="back-link" href="/blog">
             <ArrowLeft size={16} aria-hidden="true" />

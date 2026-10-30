@@ -1,4 +1,3 @@
-import Image from "next/image";
 import type { Metadata } from "next";
 import {
   ArrowRight,
@@ -129,10 +128,11 @@ export default function HomePage() {
         />
       ))}
       <SiteHeader />
-      <main>
+      <main id="main-content">
         <section className="hero section-shell">
           <div className="hero-copy">
-            <h1>{product.headline}</h1>
+            <p className="eyebrow">The security management toolkit</p>
+            <h1>100 Practical ChatGPT Prompts for <span>Security Managers &amp; Supervisors</span></h1>
             <p className="hero-subheadline">{product.subheadline}</p>
             <div className="hero-actions">
               <TrackedLink
@@ -161,14 +161,15 @@ export default function HomePage() {
               <span>Instant PDF download</span>
             </div>
           </div>
-          <div className="hero-visual" aria-label="Product preview">
-            <Image
-              src="/images/security-prompts-concept.png"
-              alt="Premium black and gold preview of 100 AI Prompts for Security Managers"
-              width={900}
-              height={900}
-              priority
-            />
+          <div className="hero-visual" aria-label="100 AI prompts toolkit illustration">
+            <div className="toolkit-cover">
+              <div className="cover-brand"><ShieldCheck size={22} aria-hidden="true" />100 Security Prompts</div>
+              <div className="cover-number">100</div>
+              <p className="cover-title">AI Prompts for<br />Security Managers</p>
+              <div className="cover-topics"><span>Reports</span><span>Handovers</span><span>Leadership</span><span>Operations</span></div>
+              <div className="cover-bottom"><span>PDF TOOLKIT · INSTANT DOWNLOAD</span><strong>{product.price}</strong></div>
+            </div>
+            <div className="cover-bonus"><Sparkles size={25} aria-hidden="true" /><div><strong>25 real-world AI use cases</strong>Included with your toolkit</div></div>
           </div>
         </section>
 

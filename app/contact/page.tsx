@@ -23,7 +23,7 @@ export default function ContactPage() {
         ]}
       />
       <SiteHeader />
-      <main className="content-page">
+      <main id="main-content" className="content-page">
         <section className="page-hero">
           <h1>Contact</h1>
           <p>

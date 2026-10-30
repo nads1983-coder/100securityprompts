@@ -73,7 +73,7 @@ export default function RecommendedSecurityEssentialsPage() {
         ]}
       />
       <SiteHeader />
-      <main className="content-page essentials-page">
+      <main id="main-content" className="content-page essentials-page">
         <section className="page-hero">
           <p className="eyebrow">Useful secondary recommendations</p>
           <h1>{recommendedSecurityEssentialsMetadata.title}</h1>

@@ -23,7 +23,7 @@ export default function PrivacyPolicyPage() {
         ]}
       />
       <SiteHeader />
-      <main className="content-page">
+      <main id="main-content" className="content-page">
         <section className="page-hero">
           <h1>Privacy Policy</h1>
           <p>Starter privacy information for visitors and customers.</p>

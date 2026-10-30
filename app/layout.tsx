@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Script from "next/script";
+import localFont from "next/font/local";
 import { product, siteUrl } from "@/lib/site/content";
 import "./globals.css";
+
+const bodyFont = localFont({ src: "../public/fonts/dm-sans-regular.ttf", variable: "--font-body", display: "swap" });
+const headingFont = localFont({ src: "../public/fonts/space-grotesk-semibold.ttf", variable: "--font-heading", display: "swap", weight: "600" });
 
 const nadineAnalyticsSiteId = process.env.NEXT_PUBLIC_NADINE_ANALYTICS_SITE_ID;
 const nadineAnalyticsTrackingKey = process.env.NEXT_PUBLIC_NADINE_ANALYTICS_TRACKING_KEY;
@@ -30,7 +34,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={`${bodyFont.variable} ${headingFont.variable}`}>
         {children}
         {nadineAnalyticsSiteId && nadineAnalyticsTrackingKey ? (
           <Script

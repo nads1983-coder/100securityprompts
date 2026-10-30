@@ -23,7 +23,7 @@ export default function TermsPage() {
         ]}
       />
       <SiteHeader />
-      <main className="content-page">
+      <main id="main-content" className="content-page">
         <section className="page-hero">
           <h1>Terms & Conditions</h1>
           <p>Starter purchase terms for this digital product.</p>

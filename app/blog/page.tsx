@@ -39,7 +39,7 @@ export default function BlogPage() {
         ]}
       />
       <SiteHeader />
-      <main className="content-page">
+      <main id="main-content" className="content-page">
         <section className="page-hero">
           <h1>Security Management AI Blog</h1>
           <p>
