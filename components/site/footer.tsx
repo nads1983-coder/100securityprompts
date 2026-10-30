@@ -25,6 +25,7 @@ export function SiteFooter() {
         </p>
       </div>
       <div className="footer-links">
+        <a href="mailto:hello@100securityprompts.com">hello@100securityprompts.com</a>
         {footerLinks.map(([label, href]) => (
           <Link key={href} href={href}>
             {label}

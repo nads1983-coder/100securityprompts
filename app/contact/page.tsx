@@ -32,6 +32,8 @@ export default function ContactPage() {
           </p>
         </section>
         <section className="legal-content">
+          <h2>Contact</h2>
+          <p>Email: <a href="mailto:hello@100securityprompts.com">hello@100securityprompts.com</a></p>
           <h2>Support</h2>
           <p>
             Email:{" "}
