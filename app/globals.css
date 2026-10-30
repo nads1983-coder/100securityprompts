@@ -1044,3 +1044,9 @@ details p { padding: 0 24px 24px; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
 
 .download-support { min-width: 0; overflow-wrap: anywhere; }
+
+.physical-security-label { display: inline-flex; align-items: center; gap: 9px; padding: 9px 13px; border: 1px solid #a78bfa50; border-radius: 100px; background: #8b5cf612; letter-spacing: .12em; line-height: 1.5; }
+.physical-security-label svg { flex-shrink: 0; }
+.physical-security-context { display: flex; flex-wrap: wrap; gap: 12px 20px; list-style: none; padding: 0; margin: 22px 0 0; color: #ded3ff; font-size: 13px; }
+.physical-security-context li { display: inline-flex; align-items: center; gap: 7px; }
+.physical-security-context svg { color: #a78bfa; flex-shrink: 0; }

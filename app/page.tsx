@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import {
   ArrowRight,
+  Building2,
+  Footprints,
+  Radio,
   CheckCircle2,
   ClipboardCheck,
   FileText,
@@ -131,9 +134,14 @@ export default function HomePage() {
       <main id="main-content">
         <section className="hero section-shell">
           <div className="hero-copy">
-            <p className="eyebrow">The security management toolkit</p>
-            <h1>100 Practical ChatGPT Prompts for <span>Security Managers &amp; Supervisors</span></h1>
-            <p className="hero-subheadline">{product.subheadline}</p>
+            <p className="eyebrow physical-security-label"><ShieldCheck size={16} aria-hidden="true" /> AI prompts for physical security</p>
+            <h1>100 Practical ChatGPT Prompts for <span>Physical Security Managers &amp; Supervisors</span></h1>
+            <p className="hero-subheadline">For security guards, site supervisors and control room managers protecting people, property and premises. Save time on incident reports, shift handovers, risk assessments and client updates.</p>
+            <ul className="physical-security-context" aria-label="Physical security work settings">
+              <li><Building2 size={17} aria-hidden="true" />On-site guarding</li>
+              <li><Footprints size={17} aria-hidden="true" />Patrols &amp; handovers</li>
+              <li><Radio size={17} aria-hidden="true" />Control rooms</li>
+            </ul>
             <div className="hero-actions">
               <TrackedLink
                 className="button button-primary"
@@ -165,7 +173,7 @@ export default function HomePage() {
             <div className="toolkit-cover">
               <div className="cover-brand"><ShieldCheck size={22} aria-hidden="true" />100 Security Prompts</div>
               <div className="cover-number">100</div>
-              <p className="cover-title">AI Prompts for<br />Security Managers</p>
+              <p className="cover-title">AI Prompts for<br />Physical Security Managers</p>
               <div className="cover-topics"><span>Reports</span><span>Handovers</span><span>Leadership</span><span>Operations</span></div>
               <div className="cover-bottom"><span>PDF TOOLKIT · INSTANT DOWNLOAD</span><strong>{product.price}</strong></div>
             </div>
