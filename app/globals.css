@@ -1050,3 +1050,13 @@ details p { padding: 0 24px 24px; }
 .physical-security-context { display: flex; flex-wrap: wrap; gap: 12px 20px; list-style: none; padding: 0; margin: 22px 0 0; color: #ded3ff; font-size: 13px; }
 .physical-security-context li { display: inline-flex; align-items: center; gap: 7px; }
 .physical-security-context svg { color: #a78bfa; flex-shrink: 0; }
+
+.officers-visual { padding: 0; }
+.officers-photo { position: relative; margin: 0; overflow: hidden; border: 1px solid #a78bfa70; border-radius: 20px; background: #241745; box-shadow: 0 24px 70px #08031366; }
+.officers-photo img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
+.officers-photo figcaption { position: absolute; inset: auto 0 0; display: flex; align-items: center; gap: 12px; padding: 65px 24px 24px; background: linear-gradient(transparent, #100923ee 65%); color: #faf8ff; font-size: 14px; font-weight: 600; }
+.officers-photo figcaption svg { flex-shrink: 0; color: #c7aeff; }
+.officers-photo figcaption small { display: block; margin-top: 5px; color: #ded3ff; font-size: 10px; font-weight: 400; }
+.officers-visual .cover-bonus { margin-left: 0; }
+@media (max-width: 900px) { .officers-visual { order: -1; } .officers-photo img { aspect-ratio: 4 / 3; object-position: center 32%; } }
+@media (max-width: 560px) { .officers-photo figcaption { padding: 55px 16px 16px; font-size: 12px; gap: 8px; } .officers-visual .cover-bonus { margin-top: 14px; padding: 14px; } }

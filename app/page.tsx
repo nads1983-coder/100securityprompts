@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import {
   ArrowRight,
@@ -169,15 +170,19 @@ export default function HomePage() {
               <span>Instant PDF download</span>
             </div>
           </div>
-          <div className="hero-visual" aria-label="100 AI prompts toolkit illustration">
-            <div className="toolkit-cover">
-              <div className="cover-brand"><ShieldCheck size={22} aria-hidden="true" />100 Security Prompts</div>
-              <div className="cover-number">100</div>
-              <p className="cover-title">AI Prompts for<br />Physical Security Managers</p>
-              <div className="cover-topics"><span>Reports</span><span>Handovers</span><span>Leadership</span><span>Operations</span></div>
-              <div className="cover-bottom"><span>PDF TOOLKIT · INSTANT DOWNLOAD</span><strong>{product.price}</strong></div>
-            </div>
-            <div className="cover-bonus"><Sparkles size={25} aria-hidden="true" /><div><strong>25 real-world AI use cases</strong>Included with your toolkit</div></div>
+          <div className="hero-visual officers-visual">
+            <figure className="officers-photo">
+              <Image
+                src="/images/physical-security-officers.webp"
+                alt="Illustration of two uniformed physical security officers with radios reviewing a site handover outside an office building"
+                width={960}
+                height={1200}
+                sizes="(max-width: 560px) calc(100vw - 36px), (max-width: 900px) 460px, 480px"
+                priority
+              />
+              <figcaption><ShieldCheck size={22} aria-hidden="true" /><span>Protecting people, property &amp; premises<small>AI-generated illustrative image</small></span></figcaption>
+            </figure>
+            <div className="cover-bonus"><Sparkles size={25} aria-hidden="true" /><div><strong>100 prompts + 25 real-world AI use cases</strong>{product.price} one-time payment · Instant PDF download</div></div>
           </div>
         </section>
 
