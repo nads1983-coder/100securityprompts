@@ -14,6 +14,9 @@ const nadineAnalyticsEndpoint = process.env.NEXT_PUBLIC_NADINE_ANALYTICS_ENDPOIN
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  verification: {
+    google: "fX-QbOIFHpGdqVYlx3SmWUDnkryGHqKSafx2dT88x04",
+  },
   title: {
     default: "AI Prompts for Security Managers | 100SecurityPrompts.com",
     template: "%s | 100SecurityPrompts.com",
